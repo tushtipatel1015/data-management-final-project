@@ -73,7 +73,7 @@ def clean_weather_data(input_file: str, output_file: str) -> pd.DataFrame:
 
 
 if __name__ == "__main__":
-    cleaned_df = clean_weather_data("SFO_2018_Climate.csv", "SFO_2018_Climate_Cleaned.csv")
+    cleaned_df = clean_weather_data("SFO_2018_Climate.csv", "Cleaned_SFO_2018_Climate.csv")
     print("Cleaning complete.")
     print(cleaned_df.head())
     print("\nData types:")
