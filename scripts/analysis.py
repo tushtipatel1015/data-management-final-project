@@ -1,3 +1,5 @@
+# plots to analyze the data aquired
+# this will help us visualize the types of delays and how the year/month/day trends
 import pandas as pd
 import matplotlib.pyplot as plt
 
