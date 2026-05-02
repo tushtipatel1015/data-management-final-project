@@ -1,9 +1,11 @@
 import pandas as pd
 from model import train_model
 
+
 def get_user_input():
     print("Enter flight information:\n")
 
+    # getting flight date and time
     month = int(input("Month (1-12): "))
 
     print("\nDay of week:")
@@ -12,10 +14,13 @@ def get_user_input():
 
     dep_hour = int(input("\nDeparture hour (0-23): "))
 
+    # specific airport and airline information
     carrier = input("\nAirline code (UA, AA, DL, etc.): ").upper()
     origin = input("Origin airport (ex: SFO): ").upper()
     dest = input("Destination airport (ex: LAX): ").upper()
 
+    # getting weather conditions that user currently sees
+    # which will be used to make a prediction
     print("\nWeather condition:")
     print("1 = Clear")
     print("2 = Rain")
@@ -25,7 +30,7 @@ def get_user_input():
 
     weather_choice = int(input("Choose weather type: "))
 
-    # Default values
+    #default values
     precipitation = 0
     avg_temp = 60
     avg_wind_speed = 5
@@ -35,16 +40,17 @@ def get_user_input():
     hail = 0
     smoke_or_haze = 0
 
-    # Map weather to model features
-    if weather_choice == 2:  # Rain
+    # map weather to model features
+    #   basically setting values to predict delay
+    if weather_choice == 2:  # rain
         precipitation = 0.5
-    elif weather_choice == 3:  # Fog
+    elif weather_choice == 3:  # fog
         fog = 1
-    elif weather_choice == 4:  # Storm
+    elif weather_choice == 4:  # storm
         precipitation = 1.0
         thunder = 1
         avg_wind_speed = 15
-    elif weather_choice == 5:   # Snow
+    elif weather_choice == 5:   # snow
         precipitation = 0.8
         avg_temp = 30
         avg_wind_speed = 10
@@ -56,7 +62,7 @@ def get_user_input():
         "OP_CARRIER": carrier,
         "ORIGIN": origin,
         "DEST": dest,
-        "DISTANCE": 500,  # default (since user won't know)
+        "DISTANCE": 1000,  # default (since user won't know/too specific to user) - we just calculated the average to be around 1000 mi
         "precipitation": precipitation,
         "avg_temp": avg_temp,
         "avg_wind_speed": avg_wind_speed,

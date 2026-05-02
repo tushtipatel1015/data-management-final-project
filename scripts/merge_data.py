@@ -1,5 +1,6 @@
 import pandas as pd
 
+# create a relational database
 def merge_data():
     flights = pd.read_csv("data/cleaned/cleaned_flights.csv")
     weather = pd.read_csv("data/cleaned/Cleaned_SFO_2018_Climate.csv")

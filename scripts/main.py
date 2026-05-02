@@ -1,17 +1,21 @@
+import pandas as pd
+from model import train_model
+from predict_flight import get_user_input
+
 def main():
     print("=== Flight Delay Prediction System ===\n")
 
-    # Train and get the model
+    # train model from model.py
     model = train_model(return_model=True)
 
-    # Get user input
+    # get user input from predict_flight.py
     sample_flight = get_user_input()
 
-    # Make prediction
+    # make prediction
     prediction = model.predict(sample_flight)[0]
     probability = model.predict_proba(sample_flight)[0][1]
 
-    # Display results
+    # results
     print("\n=== Prediction Result ===")
 
     if prediction == 1:
@@ -22,3 +26,6 @@ def main():
     print(f"Delay probability: {probability:.2%}")
 
     print("\nThank you for using the Flight Delay Predictor!")
+
+if __name__ == "__main__":
+    main()
