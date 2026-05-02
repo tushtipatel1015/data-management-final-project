@@ -21,7 +21,7 @@ from sklearn.metrics import (
 )
 
 
-def train_model():
+def train_model(return_model=False):
     # load merged dataset
     df = pd.read_csv("data/cleaned/merged_data.csv")
 
@@ -152,6 +152,9 @@ def train_model():
         f.write(classification_report(y_test, y_pred, zero_division=0))
 
     print("\nResults saved to data/outputs/model_results/model_results.txt")
+    
+    if return_model:
+        return model
 
 
 if __name__ == "__main__":
