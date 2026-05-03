@@ -85,7 +85,7 @@ The project follows a complete data pipeline:
     python3 main.py
 
 ### Example Output
-**Input:**
+**Example Input:**
 - Month: 4 (April)
 - Day of week: 2 (Wednesday)
 - Departure hour: 13 (1 PM)
@@ -94,6 +94,7 @@ The project follows a complete data pipeline:
 - Destination: LAX
 - Weather: Storm (4)
 
+**Example Prediction Result:**
 Prediction Result:
 This flight is likely to be delayed.
 Delay probability: 68.25%
