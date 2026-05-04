@@ -4,7 +4,7 @@ import sqlite3
 conn = sqlite3.connect("data/database/flights_weather.db")
 cursor = conn.cursor()
 
-# test query
+# test query: find the airlines with the highest average arrival delay
 query = """
 SELECT OP_CARRIER, AVG(ARR_DELAY)
 FROM Flights
