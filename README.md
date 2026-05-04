@@ -71,18 +71,18 @@ The project follows a complete data pipeline:
 
 ## How to Run
 1. Install Dependencies
-    pip install pandas scikit-learn matplotlib
+    - pip install pandas scikit-learn matplotlib
 2. Run Data Pipeline (in order)
-    python3 scripts/clean_flights.py
-    python3 scripts/clean_weather.py
-    python3 scripts/merge_data.py
-    python3 scripts/create_database.py
+    - python3 scripts/clean_flights.py
+    - python3 scripts/clean_weather.py
+    - python3 scripts/merge_data.py
+    - python3 scripts/create_database.py
 3. Run Analysis
-    python3 scripts/analysis.py
+    - python3 scripts/analysis.py
 4. Train Model
-    python3 scripts/model.py
+    - python3 scripts/model.py
 5. Run Prediction System
-    python3 main.py
+    - python3 main.py
 
 ### Example Output
 **Example Input:**
