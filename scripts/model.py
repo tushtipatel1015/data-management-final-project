@@ -106,6 +106,7 @@ def train_model(return_model=False):
         y,
         test_size=0.2, # 20% for testing, so 80% used for training
         random_state=10,
+        # handling imbalance
         stratify=y # this makes sure that the amount of delayed flights in both sets of data are the same proportion (avoiding bias and skewed data)
     )
 
