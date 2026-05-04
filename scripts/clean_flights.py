@@ -5,7 +5,7 @@ import os
 def clean_flights():
     
     # find all flight files (monthly split)
-    files = glob.glob("split_flights/*.csv")
+    files = glob.glob("data/split_flights/*.csv")
     
     # if not file is found print a message
     if not files:
@@ -46,7 +46,7 @@ def clean_flights():
     
     # save cleaned flight data in cleaned_flights.csv
     os.makedirs("data/cleaned", exist_ok = True)    # safety check to ensure cleaned folder exists
-    flights.to_csv("cleaned_flights.csv", index = False)
+    flights.to_csv("data/cleaned/cleaned_flights.csv", index=False)
     
     print("Cleaned flights file saved to cleaned_flights.csv")
     print(f"Rows: {len(flights)}")

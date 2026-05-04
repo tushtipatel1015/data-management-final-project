@@ -2,7 +2,7 @@ import pandas as pd
 
 def clean_weather():
     # read the climate csv
-    df = pd.read_csv("SFO_2018_Climate.csv")
+    df = pd.read_csv("data/SFO_2018_Climate.csv")
 
     # rename columns to SQL-friendly names
     df = df.rename(columns= {
@@ -47,7 +47,7 @@ def clean_weather():
         df[col] = df[col].fillna(0).astype(int)
 
     #save cleaned csv
-    df.to_csv("Cleaned_SFO_2018_Climate.csv", index=False)
+    df.to_csv("data/cleaned/Cleaned_SFO_2018_Climate.csv", index=False)
 
     print("Cleaned weather file saved.")
     print(f"Rows: {len(df)}")

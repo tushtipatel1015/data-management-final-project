@@ -74,3 +74,5 @@ plt.ylabel("Average Arrival Delay (minutes)")
 plt.tight_layout()
 plt.savefig("data/outputs/plots/delay_by_temperature_category.png")
 plt.close()
+
+print("All plots saved to data/outputs/plots")
